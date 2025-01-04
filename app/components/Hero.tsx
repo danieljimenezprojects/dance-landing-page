@@ -46,7 +46,7 @@ export default function Hero() {
             <span className="relative inline-block">
               Conecta con tu{' '}
               <motion.span 
-                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600"
+                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -60,7 +60,7 @@ export default function Hero() {
               </motion.span>{' '}
               y la{' '}
               <motion.span 
-                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600"
+                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

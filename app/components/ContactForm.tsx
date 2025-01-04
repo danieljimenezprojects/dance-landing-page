@@ -42,163 +42,95 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="relative py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-purple-300 to-purple-400 overflow-hidden">
-      <div className="max-w-md mx-auto relative">
-        <motion.div
-          className="absolute inset-0 gradient-border rounded-xl opacity-50"
-          style={{ padding: '1px' }}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 0.5 }}
-          viewport={{ once: true }}
-        >
-          <div className="absolute inset-0 bg-purple-50 rounded-xl" />
-        </motion.div>
-        
-        <motion.div
-          className="relative glass-card rounded-xl p-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <motion.h2 
-            className="text-3xl font-bold gradient-text mb-8 text-center relative inline-block"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+    <section id="contacto" className="relative py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-purple-300 to-purple-400">
+      <div className="max-w-md mx-auto">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 shadow-xl">
+          <h2 className="text-3xl font-bold text-center mb-8 bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-500 bg-clip-text text-transparent">
             Contáctanos
-            <motion.span 
-              className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-purple-500 to-pink-500"
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
-              viewport={{ once: true }}
-            />
-          </motion.h2>
+          </h2>
 
-          <motion.form 
+          <form 
             ref={formRef}
             onSubmit={handleSubmit}
             className="space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            viewport={{ once: true }}
           >
-            <div className="relative group">
+            <div>
+              <label 
+                htmlFor="name" 
+                className="block text-sm font-medium text-purple-100 mb-1"
+              >
+                Nombre
+              </label>
               <input 
                 type="text" 
                 id="name" 
                 name="name" 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 touch-manipulation"
-                aria-labelledby="name-label"
+                className="w-full px-4 py-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-colors text-purple-900"
               />
-              <label 
-                id="name-label"
-                htmlFor="name" 
-                className="absolute left-3 top-2 text-purple-600 transition-all duration-300 pointer-events-none transform origin-left text-sm"
-              >
-                Nombre
-              </label>
             </div>
 
-            <div className="relative group">
+            <div>
+              <label 
+                htmlFor="email" 
+                className="block text-sm font-medium text-purple-100 mb-1"
+              >
+                Correo Electrónico
+              </label>
               <input 
                 type="email" 
                 id="email" 
                 name="email" 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 touch-manipulation"
-                aria-labelledby="email-label"
+                className="w-full px-4 py-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-colors text-purple-900"
               />
-              <label 
-                id="email-label"
-                htmlFor="email" 
-                className="absolute left-3 top-2 text-purple-600 transition-all duration-300 pointer-events-none transform origin-left text-sm"
-              >
-                Correo Electrónico
-              </label>
             </div>
 
-            <div className="relative group">
+            <div>
+              <label 
+                htmlFor="message" 
+                className="block text-sm font-medium text-purple-100 mb-1"
+              >
+                Mensaje
+              </label>
               <textarea 
                 id="message" 
                 name="message" 
                 rows={4} 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 resize-none touch-manipulation"
-                aria-labelledby="message-label"
+                className="w-full px-4 py-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-colors text-purple-900 resize-none"
               ></textarea>
-              <label 
-                id="message-label"
-                htmlFor="message" 
-                className="absolute left-3 top-2 text-purple-600 transition-all duration-300 pointer-events-none transform origin-left text-sm"
-              >
-                Mensaje
-              </label>
             </div>
 
             <motion.button 
               type="submit"
-              className="w-full px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-purple-50 rounded-md text-lg font-semibold hover:from-pink-500 hover:to-purple-600 transition-all duration-300 shadow-lg relative overflow-hidden group disabled:opacity-50"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="w-full px-8 py-3 bg-gradient-to-r from-purple-600 to-pink-500 text-purple-50 rounded-md text-lg font-semibold hover:from-pink-500 hover:to-purple-600 transition-colors shadow-lg disabled:opacity-50"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               disabled={isSubmitting}
             >
-              <span className="relative z-10">{isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
+              {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
             </motion.button>
-          </motion.form>
+          </form>
 
           {formStatus && (
-            <motion.p 
-              className={`mt-4 text-center ${
-                formStatus.includes('¡Gracias') ? 'text-green-600' : 'text-red-600'
+            <div 
+              className={`mt-4 p-3 rounded-md ${
+                formStatus.includes('¡Gracias') ? 'bg-green-500/10 text-green-200' : 'bg-red-500/10 text-red-200'
               }`}
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
-              role="status"
-              aria-live="polite"
+              role="alert"
             >
               {formStatus}
-            </motion.p>
+            </div>
           )}
-        </motion.div>
+        </div>
       </div>
 
-      <motion.div
-        className="absolute top-20 right-0 w-64 h-64 bg-gradient-to-br from-yellow-300/20 to-pink-300/20 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.4, 0.3],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse"
-        }}
-      />
-      <motion.div
-        className="absolute bottom-20 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-yellow-300/20 rounded-full mix-blend-multiply filter blur-3xl"
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.4, 0.3, 0.4],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          repeatType: "reverse"
-        }}
-      />
+      {/* Background gradients */}
+      <div className="fixed inset-0 -z-10 pointer-events-none">
+        <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-yellow-300/20 to-pink-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-yellow-300/20 rounded-full mix-blend-multiply filter blur-3xl animate-pulse" />
+      </div>
     </section>
   )
 }

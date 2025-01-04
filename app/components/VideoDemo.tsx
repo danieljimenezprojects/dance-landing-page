@@ -33,7 +33,7 @@ export default function VideoDemo() {
     <section id="video" className="py-20 px-6 bg-gradient-to-b from-purple-100 to-purple-200 overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <motion.h2 
-          className="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center leading-normal"
+          className="text-4xl md:text-5xl font-bold gradient-text mb-12 text-center leading-[1.3] pb-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

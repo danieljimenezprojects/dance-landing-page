@@ -7,30 +7,24 @@ import Footer from './components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Conexión de Baile - Fusión de Waving y Breaking',
+  title: 'Flow movement - Fusión de Waving y Breaking',
   description: 'Descubre la fusión única de waving y breaking con Daniel Roke y Daniel Deroe. Aprende técnicas avanzadas de danza y expresión corporal.',
   keywords: 'waving, breaking, danza, expresión corporal, Daniel Roke, Daniel Deroe',
   openGraph: {
-    title: 'Conexión de Baile - Fusión de Waving y Breaking',
+    title: 'Flow movement - Fusión de Waving y Breaking',
     description: 'Descubre la fusión única de waving y breaking con Daniel Roke y Daniel Deroe.',
-    url: 'https://conexion-de-baile.vercel.app',
-    siteName: 'Conexión de Baile',
+    url: 'https://flowmovement.vercel.app',
+    siteName: 'Flow movement',
     images: [
       {
-        url: 'https://conexion-de-baile.vercel.app/og-image.jpg',
+        url: 'https://flowmovement.vercel.app/fuckers2.webp',
         width: 1200,
         height: 630,
-        alt: 'Conexión de Baile - Waving y Breaking',
+        alt: 'Flow movement - Waving y Breaking',
       },
     ],
     locale: 'es_ES',
     type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Conexión de Baile - Fusión de Waving y Breaking',
-    description: 'Descubre la fusión única de waving y breaking con Daniel Roke y Daniel Deroe.',
-    images: ['https://conexion-de-baile.vercel.app/og-image.jpg'],
   },
 }
 

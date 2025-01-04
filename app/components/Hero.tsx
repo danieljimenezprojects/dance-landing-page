@@ -1,81 +1,166 @@
 'use client'
-import { motion } from 'framer-motion'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import Image from 'next/image'
 
 export default function Hero() {
+  const { scrollYProgress } = useScroll()
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '50%'])
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/placeholder.svg?height=1080&width=1920"
-          alt="Silueta de bailarines en una luz cálida y dorada"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-          className="opacity-50"
-        />
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-purple-900 via-purple-800 to-purple-900">
+      <motion.div 
+        className="absolute inset-0 z-0"
+        style={{ y, opacity }}
+      >
+        <div className="relative w-full h-full">
+          <Image
+            src="/fuckers2.webp?height=1080&width=1920"
+            alt="Silueta de bailarines en luz vibrante"
+            fill
+            priority
+            className="object-cover opacity-20 mix-blend-soft-light"
+          />
+        </div>
+      </motion.div>
+
+      {/* Background Gradients */}
+      <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-gradient-radial from-purple-600/50 via-purple-900/80 to-purple-900/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900 via-transparent to-purple-900/50" />
       </div>
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-        <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-bold text-warm-50 mb-6 leading-tight"
+      
+      <div className="relative z-10 max-w-7xl mx-auto px-4 xs:px-6 pt-24 pb-20 sm:py-24 md:py-32 text-center">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 1 }}
+          className="relative inline-block"
         >
-          Abraza el Ritmo de tu Alma
-        </motion.h1>
+<motion.h1 
+            className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-purple-50 mb-6 leading-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="relative inline-block">
+              Conecta con tu{' '}
+              <motion.span 
+                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                movimiento
+                <motion.span 
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-1 bg-yellow-400"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 0.8, duration: 0.8 }}
+                />
+              </motion.span>{' '}
+              y la{' '}
+              <motion.span 
+                className="relative inline-block cursor-pointer text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                danza
+                <motion.span 
+                  className="absolute -bottom-1 sm:-bottom-2 left-0 w-full h-1 bg-yellow-400"
+                  initial={{ scaleX: 0 }}
+                  animate={{ scaleX: 1 }}
+                  transition={{ delay: 1, duration: 0.8 }}
+                />
+              </motion.span>
+            </span>
+          </motion.h1>
+        </motion.div>
+
         <motion.p 
-          className="text-xl md:text-2xl text-warm-100 mb-8 max-w-3xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl text-purple-100 mb-8 md:mb-12 max-w-3xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
         >
-          Únete a Daniel Roke y Daniel Deroe en un extraordinario viaje de autoexpresión a través de la danza. 
-          Descubre la fluidez del waving y el poder enraizador del floorwork mientras liberas el potencial oculto de tu cuerpo.
+          Únete a Daniel Roke y Daniel Deroe en un viaje de expresión a través de la danza. 
+          Descubre el waving y el breaking para improvisar, expresarte con otras personas y conocerte mejor.
         </motion.p>
+
         <motion.div
-          className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4"
+          className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <a 
-            href="#program" 
-            className="px-8 py-3 bg-warm-600 text-warm-50 rounded-full text-lg font-semibold hover:bg-warm-700 transition-colors duration-300 shadow-lg"
+          <motion.a 
+            href="#programa" 
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-purple-600 overflow-hidden rounded-full w-full max-w-[280px] sm:max-w-none sm:w-auto text-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Explora Nuestro Programa
-          </a>
-          <a 
-            href="#contact" 
-            className="px-8 py-3 bg-transparent border-2 border-warm-50 text-warm-50 rounded-full text-lg font-semibold hover:bg-warm-50 hover:text-warm-900 transition-colors duration-300"
+            <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500" />
+            <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            <span className="relative z-10 text-base sm:text-lg font-semibold text-purple-50 whitespace-nowrap">
+              Explora Nuestro Programa
+            </span>
+          </motion.a>
+
+          <motion.a 
+            href="#contacto" 
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 overflow-hidden rounded-full border-2 border-purple-300 w-full max-w-[280px] sm:max-w-none sm:w-auto text-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            Contáctanos
-          </a>
+            <span className="absolute inset-0 bg-purple-300/10 backdrop-blur-sm" />
+            <span className="absolute inset-0 gradient-bg opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
+            <span className="relative z-10 text-base sm:text-lg font-semibold text-purple-50 whitespace-nowrap">
+              Contáctanos
+            </span>
+          </motion.a>
         </motion.div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 text-center pb-8">
+
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-purple-900 to-transparent z-20" />
+      
+      <motion.a 
+        href="#programa"
+        className="absolute bottom-8 left-0 right-0 z-30 flex justify-center"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+      >
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.8 }}
+          className="relative w-12 h-12"
+          animate={{
+            y: [0, 8, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            repeatType: "reverse",
+            ease: "easeInOut",
+          }}
         >
-          <a 
-            href="#benefits" 
-            aria-label="Desplázate a la sección de beneficios"
-            className="text-warm-50 hover:text-warm-200 transition-colors duration-300"
+          <span className="absolute inset-0 bg-yellow-400 rounded-full opacity-20 animate-ping" />
+          <motion.svg
+            viewBox="0 0 24 24"
+            className="w-12 h-12 text-purple-50"
+            whileHover={{ scale: 1.1 }}
           >
-            <svg 
-              xmlns="http://www.w3.org/2000/svg" 
-              className="h-10 w-10 mx-auto animate-bounce" 
-              fill="none" 
-              viewBox="0 0 24 24" 
+            <motion.path
+              fill="none"
               stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </a>
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M7 13l5 5 5-5M7 6l5 5 5-5"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            />
+          </motion.svg>
         </motion.div>
-      </div>
+      </motion.a>
     </section>
   )
 }

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://conexion-de-baile.vercel.app/sitemap.xml
+

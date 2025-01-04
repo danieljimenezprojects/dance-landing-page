@@ -1,3 +1,4 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -20,7 +21,12 @@ module.exports = {
           900: 'var(--warm-900)',
         },
       },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        serif: ['var(--font-playfair-display)'],
+      },
     },
   },
   plugins: [],
 }
+

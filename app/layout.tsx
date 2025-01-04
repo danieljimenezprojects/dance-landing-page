@@ -7,20 +7,21 @@ import Footer from './components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Flow movement - Fusión de Waving y Breaking',
+  title: 'Flow Movement - Fusión de Waving y Breaking',
   description: 'Descubre la fusión única de waving y breaking con Daniel Roke y Daniel Deroe. Aprende técnicas avanzadas de danza y expresión corporal.',
   keywords: 'waving, breaking, danza, expresión corporal, Daniel Roke, Daniel Deroe',
+  metadataBase: new URL('https://flowmovement.vercel.app'),
   openGraph: {
-    title: 'Flow movement - Fusión de Waving y Breaking',
+    title: 'Flow Movement - Fusión de Waving y Breaking',
     description: 'Descubre la fusión única de waving y breaking con Daniel Roke y Daniel Deroe.',
     url: 'https://flowmovement.vercel.app',
-    siteName: 'Flow movement',
+    siteName: 'Flow Movement',
     images: [
       {
         url: '/fuckers2.webp',
         width: 1200,
         height: 630,
-        alt: 'Flow movement - Waving y Breaking',
+        alt: 'Flow Movement - Waving y Breaking',
       },
     ],
     locale: 'es_ES',

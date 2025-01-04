@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: 'Flow movement',
     images: [
       {
-        url: 'https://flowmovement.vercel.app/fuckers2.webp',
+        url: '/fuckers2.webp',
         width: 1200,
         height: 630,
         alt: 'Flow movement - Waving y Breaking',

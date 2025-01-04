@@ -1,10 +1,22 @@
 'use client'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 export default function VideoDemo() {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [showPoster, setShowPoster] = useState(true)
+
+  useEffect(() => {
+    const video = videoRef.current
+    if (video) {
+      video.addEventListener('loadeddata', () => setShowPoster(false))
+      return () => {
+        video.removeEventListener('loadeddata', () => setShowPoster(false))
+      }
+    }
+  }, [])
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -37,11 +49,23 @@ export default function VideoDemo() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
+            {showPoster && (
+              <Image
+                src="/fuckers2.webp"
+                alt="Portada del video de waving y breaking"
+                layout="fill"
+                objectFit="cover"
+                priority
+              />
+            )}
             <video 
               ref={videoRef}
               src="/moveflow.mp4" 
               className="w-full h-full object-cover"
               onClick={togglePlay}
+              playsInline
+              preload="metadata"
+              poster="/fuckers2.webp"
               aria-label="Video demostrativo de waving y breaking"
             />
             <button
@@ -71,7 +95,7 @@ export default function VideoDemo() {
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Observa cómo Daniel Roke y Daniel Deroe fusionan las técnicas de waving y breaking en una danza fluida e hipnótica, creando una experiencia visual única y cautivadora.
+          Observa cómo Daniel Roke y Daniel Deroe fusionan las técnicas de waving y breaking en una danza fluida y poderosa, creando una experiencia visual única y cautivadora.
         </motion.p>
       </div>
     </section>

@@ -150,7 +150,7 @@ export default function ContactForm() {
             >
               <span className="relative z-10">{isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}</span>
               <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-yellow-400 to-pink-500"
+                className="absolute inset-0 bg-gradient-to-r from-pink-400 to-purple-500"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.3 }}
@@ -188,7 +188,7 @@ export default function ContactForm() {
         }}
       />
       <motion.div
-        className="absolute bottom-20 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-teal-300/20 rounded-full mix-blend-multiply filter blur-3xl"
+        className="absolute bottom-20 left-0 w-64 h-64 bg-gradient-to-br from-purple-400/20 to-yellow-300/20 rounded-full mix-blend-multiply filter blur-3xl"
         animate={{
           scale: [1.2, 1, 1.2],
           opacity: [0.4, 0.3, 0.4],

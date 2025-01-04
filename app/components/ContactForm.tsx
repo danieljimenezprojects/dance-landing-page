@@ -42,7 +42,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section id="contacto" className="relative py-16 md:py-20 px-6 bg-gradient-to-b from-purple-300 to-purple-400 overflow-hidden">
+    <section id="contacto" className="relative py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-b from-purple-300 to-purple-400 overflow-hidden">
       <div className="max-w-md mx-auto relative">
         <motion.div
           className="absolute inset-0 gradient-border rounded-xl opacity-50"
@@ -93,7 +93,7 @@ export default function ContactForm() {
                 id="name" 
                 name="name" 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900"
+                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 touch-manipulation"
                 aria-labelledby="name-label"
               />
               <label 
@@ -111,7 +111,7 @@ export default function ContactForm() {
                 id="email" 
                 name="email" 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900"
+                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 touch-manipulation"
                 aria-labelledby="email-label"
               />
               <label 
@@ -129,7 +129,7 @@ export default function ContactForm() {
                 name="message" 
                 rows={4} 
                 required
-                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 resize-none"
+                className="w-full px-3 pt-6 pb-2 bg-purple-50/50 backdrop-blur-sm border-2 border-purple-300 rounded-md focus:outline-none focus:border-purple-500 transition-all duration-300 text-purple-900 resize-none touch-manipulation"
                 aria-labelledby="message-label"
               ></textarea>
               <label 
